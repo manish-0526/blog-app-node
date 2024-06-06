@@ -1,0 +1,15 @@
+{
+  "name": "blog-app-node",
+  "version": "1.0.0",
+  "description": "Blog App with auth made using nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manishgupta0/blog-app-node.git"
+  },
+  "author": "Manish",
+  "license": "ISC"
+}
