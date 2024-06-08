@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs", {'title': 'Blogs' }) %>
+
+    <body>
+        <%- include("./partials/nav.ejs") %>
+
+            <h1>Blogs</h1>
+
+            <% if(blogs.length==0) {%>
+                No Blogs
+                <%} else {%>
+                    <% blogs.forEach(blog=> {%>
+                        <%- include("./partials/blogCard.ejs", {blog}) %>
+
+                            <% }) %>
+                                <%} %>
+    </body>
+
+</html>

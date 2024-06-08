@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs", {'title': 'Login' }) %>
+
+    <body>
+        <%- include("./partials/nav.ejs") %>
+
+            <div class="container login-form">
+                <h1>Login</h1>
+                <% if(data.error) {%>
+                    <div class="form-errors">
+                        <% data.error.messages.forEach(error=>{%>
+                            <div class="form-error">
+                                <%= error %>
+                            </div>
+                            <%})%>
+                    </div>
+                    <% } %>
+                        <form action="/login" method="POST">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" name="email" placeholder="Enter your email" required
+                                value="<%= data.error ? data.error.data.email: ''%>">
+
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Enter your Password"
+                                required value="<%= data.error ? data.error.data.password: ''%>">
+
+                            <button type="submit">Login</button>
+                        </form>
+                        <p>Don't have an account?
+                            <a href="/signup" style="text-decoration: none;">
+                                Create an account
+                            </a>
+                        </p>
+            </div>
+
+    </body>
+
+</html>

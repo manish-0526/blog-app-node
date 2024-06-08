@@ -1,0 +1,23 @@
+<nav>
+    <a href="/">
+        <h1>Blog App</h1>
+    </a>
+    <ul>
+        <li><a href="/blog/all">Blogs</a></li>
+        <div>
+            <% if(user){%>
+                <li>
+                    <a href="/blog/compose">
+                        <img src="/images/write.png" width="24" /> Write
+                    </a>
+                </li>
+                <li><a href="/user">
+                        <%= user.fname %>
+                    </a></li>
+                <%} else {%>
+                    <li><a href="/signup">Register</a></li>
+                    <%}%>
+        </div>
+
+    </ul>
+</nav>

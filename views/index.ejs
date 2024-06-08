@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs", {'title': 'Home' }) %>
+
+    <body>
+        <%- include("./partials/nav.ejs") %>
+
+            <h1>Recent Blogs</h1>
+            <% if(blogs.length==0) {%>
+                No Recent Blogs
+                <%} else {%>
+                    <% blogs.forEach(blog=> {%>
+                        <%- include("./partials/blogCard.ejs", {blog}) %>
+
+                            <% }) %>
+                                <%} %>
+    </body>
+
+</html>

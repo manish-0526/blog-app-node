@@ -1,0 +1,36 @@
+<div class="blog-card">
+    <div class="blog-title">
+        <a href="/blog/<%=blog._id%>">
+            <h3 style="margin: 0px;">
+                <%= blog.title %>
+            </h3>
+        </a>
+        <span>By
+            <a href="/user/<%= user && blog.creator._id==user._id ? '':blog.creator._id %>">
+                <%= blog.creator.fname %>
+                    <%= blog.creator.lname %>
+            </a>
+        </span>
+    </div>
+    <div class="blog-summery">
+        <%= blog.summery %>
+    </div>
+
+    <div class="blog-action">
+        <%= blog.readCount %> Views
+            <% if(user && blog.creator._id==user._id) {%>
+                <div class="blog-btn-wrapper">
+                    <form action="/blog/delete/<%=blog._id%>" method="post">
+                        <button class="blog-delete-btn">
+                            <img src="/images/delete.png" width="24" />
+                        </button>
+                    </form>
+                    <form action="/blog/edit/<%=blog._id%>" method="get">
+                        <button class="blog-edit-btn">
+                            <img src="/images/edit.png" width="24" />
+                        </button>
+                    </form>
+                </div>
+                <%}%>
+    </div>
+</div>

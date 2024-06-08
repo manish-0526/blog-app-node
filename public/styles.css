@@ -1,0 +1,244 @@
+body {
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+h1 {
+    margin: 0px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+nav * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+nav h1 {
+    color: #222;
+    font-size: 3em;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+nav div {
+    gap: 12px;
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: #777;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    border-radius: 15px;
+    border: 1px solid lightgrey;
+    padding: 10px 20px;
+    text-align: center;
+    margin: auto;
+    max-width: 500px;
+}
+
+.container p,
+.container h1 {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #222;
+}
+
+label {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #555;
+    font-weight: bold;
+}
+
+.container button,
+.blog-create-form button {
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: #4CAF50;
+    width: 100%;
+    font-size: 16px;
+}
+
+form {
+    margin-top: 1rem;
+}
+
+.container.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-form-name {
+    gap: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup-form-name div {
+    flex: 1
+}
+
+.form-errors {
+    margin: 1rem 0rem;
+}
+
+.form-error {
+    color: #fff;
+    text-align: left;
+    border-radius: 8px;
+    margin: 0.2rem 0rem;
+    padding: 0.5rem 1rem;
+    background-color: #fc4557;
+}
+
+input[type=text],
+input[type=password],
+textarea {
+    min-width: 100%;
+    max-width: 100%;
+
+    padding: 15px;
+    margin: 5px 0 22px 0;
+
+    display: inline-block;
+    background: #f1f1f1;
+
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+button:hover {
+    filter: brightness(90%);
+}
+
+.blog-card {
+    background: #f2f2f2;
+    padding: 18px;
+    border-radius: 16px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.blog-card .blog-title {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-title a {
+    flex: 2;
+    text-decoration: none;
+    color: #777;
+}
+
+.blog-title h3 {
+    /* flex: 2; */
+    /* text-decoration: none; */
+    color: #000;
+}
+
+.blog-card .blog-action {
+    display: flex;
+    color: grey;
+    margin-top: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.blog-card .blog-btn-wrapper {
+    display: flex;
+}
+
+.blog-card .blog-delete-btn {
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    padding: 6px 18px;
+    border-radius: 6px;
+    background: #d83f3f;
+    text-transform: uppercase;
+}
+
+.blog-card .blog-edit-btn {
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    padding: 6px 18px;
+    border-radius: 6px;
+    background: #1c6ae4;
+    text-transform: uppercase;
+    margin-left: 0.5rem;
+}
+
+.blog-create-form {
+    text-align: center;
+}
+
+.writer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+    .signup-form-name {
+        gap: 0px;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    body {
+        width: 90%;
+    }
+}
+
+/* @media screen and (min-width: 600px) {
+    body {
+        width: 600px;
+    }
+} */

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs", {'title': 'Compose' }) %>
+
+    <body>
+        <%- include("./partials/nav.ejs") %>
+
+            <div class="blog-create-form">
+                <% if(edit) {%>
+                    <h1>Edit Blog</h1>
+                    <%} else {%>
+                        <h1>Create Blog</h1>
+                        <%}%>
+                            <form action="<%= edit ? '/blog/edit/'+ blog._id: '/blog/compose'%>" method="POST">
+                                <label for="title">Title</label>
+                                <input type="text" id="title" name="title" placeholder="Blog Title" required
+                                    value="<%= blog ? blog.title: ''%>">
+
+                                <label for="summery">Summery</label>
+                                <input type="text" id="summery" name="summery" placeholder="Blog Summery" required
+                                    value="<%= blog ? blog.summery: ''%>">
+
+                                <label for="desc">Content</label>
+                                <textarea id="desc" name="body" placeholder="Blog Content" rows="10"
+                                    required><%= blog ? blog.body: ''%></textarea>
+
+                                <% if(edit) {%>
+                                    <button type="submit">Save Blog</button>
+                                    <%} else {%>
+                                        <button type="submit">Create Blog</button>
+                                        <%}%>
+                            </form>
+            </div>
+    </body>
+
+</html>

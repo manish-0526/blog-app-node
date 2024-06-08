@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs", {'title': 'User' }) %>
+
+    <body>
+        <%- include("./partials/nav.ejs") %>
+            <div class="writer-info">
+                <h1>
+                    <%= writer.fname%>
+                        <%= writer.lname%>
+                </h1>
+                <% if(blogs.length> 0) {%>
+                    <span>
+                        <%=blogs.length%> Blogs
+                    </span>
+                    <%} %>
+            </div>
+            <% if(blogs.length==0) {%>
+                No Blogs
+                <%} else {%>
+                    <% blogs.forEach(blog=> {%>
+                        <%- include("./partials/blogCard.ejs", {blog}) %>
+
+                            <% }) %>
+                                <%} %>
+    </body>
+
+</html>
