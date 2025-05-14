@@ -26,12 +26,21 @@ blogRouter.post('/compose',
     }
 )
 
-blogRouter.post('/delete/:id', async (req, res) => {
-    const id = req.params.id
-    await blogController.deleteBlog(id)
+blogRouter.post('/delete/:id',
+    requireUserHandler,
+    async (req, res) => {
+        const { user } = res.locals
+        const { id } = req.params
 
-    res.redirect('/')
-})
+        const blog = await blogController.getBlog(id)
+
+        if (blog.creator._id == user._id) {
+            await blogController.deleteBlog(id)
+            return
+        }
+
+        res.redirect('/')
+    })
 
 blogRouter.get('/edit/:id',
     requireUserHandler,
